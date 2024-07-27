@@ -1,0 +1,70 @@
+\begin{Ejc}
+   Calcule usando residuos:
+   $$
+   \int_{-\infty}^{\infty}\frac{dx}{ax^2+bx+c} 
+   $$
+   y
+   $$
+   \int_{-\infty}^{\infty}\frac{dx}{\left( ax^2+bx+c\right)^2}
+   $$
+   donde $a, b$ y $c$ son reales tales que $b^2<4ac$.
+\end{Ejc}
+\textit{Solución.}{
+   \begin{itemize}
+      \item[\textbf{I.}]$\int_{-\infty}^{\infty}\frac{dx}{ax^2+bx+c}$\\
+         Llamemos $f(z)=1/(az^2+bz+c)$. Como $4ac>b^2\geq0$, tenemos $a\neq 0$. Así, tomando
+         $$
+         z_1=-\frac{b}{2a}+i\frac{\sqrt{4ac-b^2}}{2|a|}\phantom{000}\text{y}\phantom{000}z_2=-\frac{b}{2|a|}-i\frac{\sqrt{4ac-b^2}}{2a}=\overline{z_1},
+         $$
+         tenemos
+         $$
+         f(z)=\frac{1}{a(z-z_1)(z-z_2)}.
+         $$
+         Llamando $q(z)=a(z-z_1)(z-z_2)$, como $4ac-b^2\neq 0$, tenemos que $q(z)$ no tiene ceros reales, y $z_1$ es su único cero sobre el eje real. Además, como la función $1/(a(z-z_2))$ es analítica y no nula en $z_1$, se tiene que $z_1$ es un polo simple de $f(z)$, y
+         $$
+         \begin{aligned}
+            B:=&=\mathop{\mathrm{Res}}\limits_{z=z_1}f(z)\\
+               &=\frac{1}{a(z_1-z_2)}\\
+               &=\frac{1}{a(z_1-\overline{z_1})}\\
+               &=\frac{1}{2ia\cdot\text{Im}(z_1)}\\
+               &=\frac{1}{2ia\frac{\sqrt{4ac-b^2}}{2|a|}}\\
+               &=\frac{|a|}{ia\sqrt{4ac-b^2}}\\
+               &=\sgn(a)\frac{1}{\sqrt{4ac-b^2}}.
+         \end{aligned}
+         $$
+         Tomamos $R>|z_1|$ y llamamos $C_R$ a la curva $Re^{i\theta}$ con $\theta\in[0,\pi]$, y $C$ a la curva que consta del eje real de $-R$ a $R$ junto a $C_R$. Por el teorema de los residuos de Cauchy tenemos
+         $$
+         \int_{-R}^{R}f(x)dx+\int_{C_R}f(z)dz=\int_{C}f(z)dz=2\pi i B,
+         $$
+         y por tanto,
+         $$
+         \lim_{R\to\infty}\int_{-R}^{R}f(x)dx=2\pi i B + \lim_{R\to\infty}\int_{C_R}f(z)dz.
+         $$
+         Por el lema de Jordan, $\lim_{R\to\infty}\int_{C_R} f(z)dz=0$, así que
+         $$
+         \lim_{R\to\infty}\int_{-R}^{R}f(x)dx=2\pi i B,
+         $$
+         es decir, 
+         $$
+         \lim_{R\to\infty}\left( \int_{-R}^{0}f(x)dx+\int_{0}^{R}f(x)dx\right)=2 \pi i B.
+         $$
+         Por el criterio de la integral, $\in_{0}^{\infty}f(x)dx$ converge si y solo si $\sum_{n=0}^{\infty}f(n)$ converge, pero vemos que esto es cierto haciendo comparación del límite con la serie convergente $\sum_{n=1}^{\infty}1/(an^2)$. Por tanto, $\lim_{R\to\infty}\int_{0}^{R}f(x)dx$ converge; como $\lim_{R\to\infty}\left( \int_{-R}^{0}f(x)dx+\int_{0}^{R}f(x)dx\right)$ converge, también lo hace $\lim_{R\to\infty}\int_{-R}^{0}f(x)dx$, de modo que
+         $$
+         \begin{aligned}
+            \lim_{R\to\infty}\left( \int_{-R}^{0}f(x)dx+\int_{0}^{R}f(x)dx\right)&=\lim_{R\to\infty}\int_{-R}^{0}f(x)dx+\lim_{R\to\infty}\int_{0}^{\infty}f(x)dx\\
+                                                                                               &=\int_{-\infty}^{\infty} f(x)dx,
+         \end{aligned}
+         $$
+         y por tanto
+         $$
+         \begin{aligned}
+            \int_{-\infty}^{\infty}f(x)dx&=2\pi i B\\
+                                         &=2\pi i\cdot\sgn(a)\frac{1}{i\sqrt{4ac-b^2}}\\
+                                         &=\sgn(a)\frac{2\pi}{\sqrt{4ac-b^2}}.
+         \end{aligned}
+         $$
+
+
+   \end{itemize}
+  }
+\hfill\qedsymbol
