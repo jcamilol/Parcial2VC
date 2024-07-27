@@ -29,7 +29,7 @@
                &=\frac{1}{2ia\cdot\text{Im}(z_1)}\\
                &=\frac{1}{2ia\frac{\sqrt{4ac-b^2}}{2|a|}}\\
                &=\frac{|a|}{ia\sqrt{4ac-b^2}}\\
-               &=\sgn(a)\frac{1}{\sqrt{4ac-b^2}}.
+               &=\sgn(a)\frac{1}{i\sqrt{4ac-b^2}}.
          \end{aligned}
          $$
          Tomamos $R>|z_1|$ y llamamos $C_R$ a la curva $Re^{i\theta}$ con $\theta\in[0,\pi]$, y $C$ a la curva que consta del eje real de $-R$ a $R$ junto a $C_R$. Por el teorema de los residuos de Cauchy tenemos
@@ -48,7 +48,7 @@
          $$
          \lim_{R\to\infty}\left( \int_{-R}^{0}f(x)dx+\int_{0}^{R}f(x)dx\right)=2 \pi i B.
          $$
-         Por el criterio de la integral, $\in_{0}^{\infty}f(x)dx$ converge si y solo si $\sum_{n=0}^{\infty}f(n)$ converge, pero vemos que esto es cierto haciendo comparación del límite con la serie convergente $\sum_{n=1}^{\infty}1/(an^2)$. Por tanto, $\lim_{R\to\infty}\int_{0}^{R}f(x)dx$ converge; como $\lim_{R\to\infty}\left( \int_{-R}^{0}f(x)dx+\int_{0}^{R}f(x)dx\right)$ converge, también lo hace $\lim_{R\to\infty}\int_{-R}^{0}f(x)dx$, de modo que
+         Por el criterio de la integral, $\int_{0}^{\infty}f(x)dx$ converge si y solo si $\sum_{n=0}^{\infty}f(n)$ converge, pero vemos que esto es cierto haciendo comparación del límite con la serie convergente $\sum_{n=1}^{\infty}1/(an^2)$. Por tanto, $\lim_{R\to\infty}\int_{0}^{R}f(x)dx$ converge; como $\lim_{R\to\infty}\left( \int_{-R}^{0}f(x)dx+\int_{0}^{R}f(x)dx\right)$ converge, también lo hace $\lim_{R\to\infty}\int_{-R}^{0}f(x)dx$, de modo que
          $$
          \begin{aligned}
             \lim_{R\to\infty}\left( \int_{-R}^{0}f(x)dx+\int_{0}^{R}f(x)dx\right)&=\lim_{R\to\infty}\int_{-R}^{0}f(x)dx+\lim_{R\to\infty}\int_{0}^{\infty}f(x)dx\\
@@ -63,8 +63,33 @@
                                          &=\sgn(a)\frac{2\pi}{\sqrt{4ac-b^2}}.
          \end{aligned}
          $$
-
-
+      \item[\textbf{II.}] $\int_{-\infty}^{\infty} \frac{dx}{(ax^2+bx+c)^2}$\\
+         (Seguimos usando $z_1,z_2,C,\dots$ con el mismo significado del ítem \textbf{I.}) Llamando $g(z)=1/(az^2+bz+c)^2$ tenemos
+         $$
+         g(z)=\frac{1}{z^2(z-z_1)^2(z-z_2)^2}.
+         $$
+         Notemos que $r(z):=a^2(z-z_1)^2(z-z_2)^2$ no tiene ceros reales y $z_1$ es su único cero por encima del eje real. Además, como la función $1/(a^2(z-z_2)^2)$ es analítica y no nula en $z_1$, se tiene que $z_1$ es un polo de orden $2$ de $g(z)$, y
+         $$
+         \begin{aligned}
+            D:=&=\mathop{\mathrm{Res}}\limits_{z=z_1}g(z)\\
+               &=\frac{d}{dz}\left.\left( \frac{1}{a^2(z-z_2)^2}\right)\right|_{z=z_1}\\
+               &=\left. \frac{-2}{a^2(z-z_2)^3}\right|_{z=z_1}\\
+               &=\frac{-2}{a^2(z_1-z_2)^3}\\
+               &=\frac{-2}{a^2(z_1-\overline{z_1})^3}\\
+               &=\frac{-2}{a^2\left( 2i\text{Im}(z_1)\right)^3}\\
+               &=\frac{-2}{a^2\left( 2i\frac{\sqrt{4ac-b^2}}{2|a|}\right)^3}\\
+               &=\frac{-2}{-\frac{i}{|a|}(4ac-b^2)^{3/2}}\\
+               &=-\frac{2i|a|}{(4ac-b^2)^{3/2}}.
+         \end{aligned}
+         $$
+         Como $q(z)$ y $r(z)$ tienen el mismo cero sobre el eje real, podemos integrar $g(z)$ sobre el contorno $C$ para, de forma similar a como se hizo en \textbf{I.} (con la salvedad de que el criterio de comparación del límite se hace con la serie convergente $\sum_{n=1}^{\infty}1/(an^4)$), llegar a
+         $$
+         \begin{aligned}
+            \int_{-\infty}^{\infty}g(x)dx&=2\pi i D\\
+                                         &=2\pi i\left( -\frac{2i|a|}{(4ac-b^2)^{3/2}}\right)\\
+                                         &=\frac{4\pi|a|}{(4ac-b^2)^{3/2}}.
+         \end{aligned}
+         $$
    \end{itemize}
   }
 \hfill\qedsymbol
