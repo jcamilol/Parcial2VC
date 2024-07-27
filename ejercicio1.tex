@@ -1,0 +1,43 @@
+\begin{exercise}
+    Suponga que la serie
+    $$
+    \sum_{n=-\infty}^{\infty} x[n]z^{-n}
+    $$
+    converge a una función analítica $X(z)$ en algún anillo $R_1<|z|<R_2$. La suma $X(z)$ es llamada la \textbf{z-transformada} de $x[n]$ ($n=0,\pm 1,\pm 2,\dots$). Use la expresión (5), Sec. 66, para los coeficientes en una serie de Laurent para mostrar que si el anillo contiene la circunferencia unitaria $|z|=1$, entonces la $z$-transformada inversa de $X(z)$ puede escribirse como
+    $$
+    x[n]=\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{i\theta})e^{in\theta}d\theta\hspace{1cm}(n=0,\pm 1, \pm 2,\dots).
+    $$
+\end{exercise}
+\begin{proof}
+    Llamemos $A$ a la región anular $R_1<|z|<R_2$, y $C$ a la circunferencia $|z|=1$ orientada positivamente. Supongamos que $C$ está contenido en $A$. Como $X(z)$ es analítica en $A$ y $C$ es un contorno simple orientado positivamente alrededor de $0$ y contenido en $A$, se sigue que $X(z)$ tiene representación en serie de Laurent
+    $$
+    X(z)=\sum_{-\infty}^{\infty} c_n z^n, \phantom{1cm}(z\in A)
+    $$
+    donde, para todo $n\in \mathbb{Z}^{+}$,
+    $$
+    c_n=\frac{1}{2\pi i}\int_{C}\frac{X(z)}{z^{n+1}} dz.
+    $$
+    Como además, para todo $z\in A$ tenemos
+    $$
+    X(z)=\sum_{n=-\infty}^{\infty} x[n]z^{-n},
+    $$
+    por la unicidad de la representación en serie de Laurent, se sigue que para todo $n\in \mathbb{Z}^{+}$,
+    $$
+    \begin{aligned}
+       x[n]&=c_{-n}\\
+           &=\frac{1}{2\pi i}\int_{C}\frac{X(z)}{z^{-n+1}} dz\\
+           &=\frac{1}{2\pi i}\int_{C}X(z)z^{n-1}dz.\\
+    \end{aligned}
+    $$
+    Haciendo el cambio de variable $z=e^{i\theta}$, $dz=ie^{i\theta}d\theta$, se tiene
+    $$
+    \begin{aligned}
+       \frac{1}{2\pi i}\int_{C}X(z)z^{n-1}dz&=\frac{1}{2\pi i}\int_{-\pi}^{\pi}X(e^{i\theta})({e^{i\theta}})^{n-1}ie^{i\theta}d\theta\\
+                                            &=\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{i\theta})e^{in\theta}d\theta,
+    \end{aligned}
+    $$
+    con lo que concluimos
+    $$
+    x[n]=\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{i\theta})e^{in\theta}d\theta\hspace{1cm}(n=0,\pm 1, \pm 2,\dots).
+    $$
+\end{proof}
