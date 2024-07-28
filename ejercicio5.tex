@@ -40,7 +40,43 @@
          $$
          \lim_{R\to\infty}\int_{-R}^{R}f(x)dx=2\pi i B + \lim_{R\to\infty}\int_{C_R}f(z)dz.
          $$
-         Por el lema de Jordan, $\lim_{R\to\infty}\int_{C_R} f(z)dz=0$, así que
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+         Para cada $z\in C_R$ tenemos
+         $$
+         \begin{aligned}
+            |z-z_1|&\geq ||z|-|z_1||\\
+                   &=|R-|z_1||\\
+                   &=R-|z_1|\\
+         \end{aligned}
+         $$
+         (pues $R>|z_1|$), y
+         $$
+         \begin{aligned}
+            |z-z_2|&\geq||z|-|z_2||\\
+                   &=|R-|z_2||\\
+                   &=|R-|\overline{z_1}||\\
+                   &=|R-|z_1||\\
+                   &=R-|z_1|.
+         \end{aligned}
+         $$
+         Por tanto
+         $$
+         \frac{1}{(R-|z_1|)^2}\geq\frac{1}{|z-z_1||z-z_2|},
+         $$
+         de modo que
+         $$
+         \begin{aligned}
+            |f(z)|&=\left|\frac{1}{a(z-z_1)(z-z_2)}\right|\\
+                  &=\frac{1}{|a||z-z_1||z-z_2|}\\
+                  &\leq\frac{1}{|a|(R-|z_1|)^2},
+         \end{aligned}
+         $$
+         con lo cual tenemos
+         $$
+         \left|\int_{C_R}f(z)dz\right|\leq \frac{\pi R}{|a|(R-|z_1|)^2}.
+         $$
+         Como $\lim_{R\to\infty}(\pi R)/(|a|(R-|z_1|)^2)=0$, se sigue que $\lim_{R\to\infty} \int_{C_R}f(z)dz=0$. Con lo anterior
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
          $$
          \lim_{R\to\infty}\int_{-R}^{R}f(x)dx=2\pi i B,
          $$
