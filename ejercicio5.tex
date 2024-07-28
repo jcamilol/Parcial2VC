@@ -9,7 +9,7 @@
    $$
    donde $a, b$ y $c$ son reales tales que $b^2<4ac$.
 \end{Ejc}
-\textit{Solución.}{
+\begin{proof}
    \begin{itemize}
       \item[\textbf{I.}]$\int_{-\infty}^{\infty}\frac{dx}{ax^2+bx+c}$\\
          Llamemos $f(z)=1/(az^2+bz+c)$. Como $4ac>b^2\geq0$, tenemos $a\neq 0$. Así, tomando
@@ -38,7 +38,7 @@
          $$
          y por tanto,
          $$
-         \lim_{R\to\infty}\int_{-R}^{R}f(x)dx=2\pi i B + \lim_{R\to\infty}\int_{C_R}f(z)dz.
+         \lim_{R\to\infty}\int_{-R}^{R}f(x)dx=2\pi i B - \lim_{R\to\infty}\int_{C_R}f(z)dz.
          $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
          Para cada $z\in C_R$ tenemos
@@ -127,5 +127,4 @@
          \end{aligned}
          $$
    \end{itemize}
-  }
-\hfill\qedsymbol
+\end{proof}

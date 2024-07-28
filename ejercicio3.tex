@@ -1,7 +1,8 @@
 \begin{Ejc}
    Calcule $\oint _{|z|=2}\frac{\senh (1/z)}{z-1}dz$.
 \end{Ejc}
-\textit{Solución.} \normalfont{Asumimos que el contorno $|z|=2$ está orientado positivamente. Llamemos $f(z)=\frac{\senh(1/z)}{z-1}$. Como $\senh$ es una función entera, los únicos puntos en que $f$ no es analítica son $z_0=0$ y $z_1=1$, que se encuentran dentro de $|z|=2$, y por tanto son puntos singulares aislados de $f$. Por el teorema de los residuos de Cauchy tenemos
+\begin{proof}
+   Asumimos que el contorno $|z|=2$ está orientado positivamente. Llamemos $f(z)=\frac{\senh(1/z)}{z-1}$. Como $\senh$ es una función entera, los únicos puntos en que $f$ no es analítica son $z_0=0$ y $z_1=1$, que se encuentran dentro de $|z|=2$, y por tanto son puntos singulares aislados de $f$. Por el teorema de los residuos de Cauchy tenemos
    $$
    \oint _{|z|=2}\frac{\senh (1/z)}{z-1}dz=2\pi i \sum_{k=0}^{1}\mathop{\mathrm{Res}}\limits_{z=z_k}f(z).
    $$
@@ -64,5 +65,4 @@
                                             &=0.
   \end{aligned}
   $$
-}
-\hfill\qedsymbol
+\end{proof}
